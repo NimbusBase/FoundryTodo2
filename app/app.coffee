@@ -3,7 +3,7 @@ if not localStorage["version"]?
 	localStorage["version"] ="google"
 	window.location.reload()
 
-foundry.angular.dependency = ['dialogs.main']
+foundry.angular.dependency = ['ngNotify']
 
 define('config', ()->
 	config = {}
