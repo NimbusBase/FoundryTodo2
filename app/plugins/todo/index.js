@@ -31,6 +31,14 @@ function define_controller(){
     // get a reference with the model we registered above
     todo_model = foundry._models.Todo
 
+    todo_model.onUpdate(function(mode, obj, isLocal){
+      //  update todos
+      $scope.load();
+      if(!isLocal){
+        $scope.$apply();
+      }
+    });
+
     $scope.load = function(){
         $scope.todos = todo_model.all()
     }
